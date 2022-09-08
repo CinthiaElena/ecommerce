@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store',
+    'stripe',
 ]
 
 MIDDLEWARE = [
@@ -117,13 +119,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-import os
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES = [os.path.join(BASE_DIR, 'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51LfbdQBP5etO4wMVSErOXUhhSnrI68dgIV4wvQl1SZNeywKwnxHRoUwkoOuzOspc1LW0CjDExdMwF2fBMiy0nA0I00BJiSqwpQ'
+STRIPE_SECRET_KEY = 'sk_test_51LfbdQBP5etO4wMVufKcR0qrX0POQ2TqzP4NlCIGAKyJxU9FixSj2Yh1luk5MljfQZqLd0XOkPC0y1mqzT2fp2Oe000cQAZLni'
 
 
 # Default primary key field type

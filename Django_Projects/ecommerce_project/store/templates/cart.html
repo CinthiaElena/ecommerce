@@ -93,6 +93,22 @@ Home
                 </tbody>
             </table>
             <div class="mx-auto">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <script
+                      src="https://checkout.stripe.com/checkout.js"
+                      class="stripe-button"
+                      data-key="pk_test_51LfbdQBP5etO4wMVSErOXUhhSnrI68dgIV4wvQl1SZNeywKwnxHRoUwkoOuzOspc1LW0CjDExdMwF2fBMiy0nA0I00BJiSqwpQ"
+                      data-name="Z-store"
+                      data-description="{{ description }}"
+                      data-amount="{{ORDER_AMOUNT}}"
+                      data-locale="auto"
+                      data-shipping-address="true"
+                      data-billing-address="true"
+                      data-zip-code="true"
+                      data-currency="mxn">
+                    </script>
+                  </form>
                 <a href=" {% url  'home' %}" style="text-decoration:none;">
                     <button type="button" class="btn btn-lg btn-block bg-dark text-white">
                         Continuar comprando
