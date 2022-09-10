@@ -1,3 +1,4 @@
+{% load static %}
 <nav class="navbar navbar-expand-md navbar-light bg-dark">
     <a href="/" class="navbar-brand"><i class="fa-solid fa-store text-warning fa-2x "></i></a>
     <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav" name="button"><span class="navbar-toggler-icon"></span></button>
@@ -12,7 +13,6 @@
                 {% endfor %}
             </div>
         </li>
-        <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="Contact">Contacto</a></li>
         <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="About">Acerca de</a></li>
        
         {% if request.user.is_authenticated and request.user.first_name %}
